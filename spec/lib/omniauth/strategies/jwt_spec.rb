@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe OmniAuth::Strategies::JWT do
-  let(:response_json){ MultiJson.load(last_response.body) }
+  let(:response_json){ JSON.parse(last_response.body) }
   let(:args){ ['imasecret', {auth_url: 'http://example.com/login'}] }
   
   let(:app){
